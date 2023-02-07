@@ -19,7 +19,9 @@ fetch(`https://best-booking-com-hotel.p.rapidapi.com/booking/best-accommodation?
 	.then(response => {
       console.log(response)
       document.querySelector('h2').innerText = response.name
-      document.querySelector("a").innerHTML = response.link
+      const link = document.querySelector("a");
+      link.href = response.link;
+      link.innerHTML = response.link;
       document.querySelector('h3').innerText = response.rating
   })
 
